@@ -8,4 +8,3 @@ collections:
   questions:
     sort_by: number
     output: true
-    permalink: "/:title"
