@@ -1,0 +1,11 @@
+
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+collections:
+  questions:
+    sort_by: number
+    output: true
+    permalink: "/:title"

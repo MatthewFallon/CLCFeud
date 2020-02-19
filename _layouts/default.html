@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/script.js"></script>
+</head>
+<body>
+    <select id="menu">
+        <option value=""></option>
+        {% for question in site.questions %}
+            {% if question.url == page.url %}
+                <option disabled selected value="{{ question.url }}">{{ question.title }}</option>
+<!--                Handles checking if page has a next or previous page around it.-->
+            {% else %}
+                <option value="{{ question.url }}">{{ question.title }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    {% assign prev = page.number | minus: 2 %}
+    {% assign next = page.number %}
+    {% if site.questions[prev] and prev >= 0 %}
+        <button id="prev" href="{{ site.questions[prev].url }}" onclick="document.location.href = '{{ site.questions[prev].url }}'"><</button>
+    {% endif %}
+    {% if site.questions[next] %}
+        <button id="next" href="{{ site.questions[next].url }}" onclick="document.location.href = '{{ site.questions[next].url }}'">></button>
+    {% endif %}
+    <h1 class="title">CLC Feud</h1>
+    <div class="game">{{ content }}</div>
+
+</body>
+</html>
