@@ -1,1 +1,1 @@
-There is a production build of this site open at [https://clc-feud.netlify.com](https://clc-feud.netlify.com).
+There is a production build of this site open at <a href="https://clc-feud.netlify.com" target="_blank">https://clc-feud.netlify.com</a>.
